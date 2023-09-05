@@ -1,0 +1,326 @@
+/* SETUP */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 100;
+
+  --general_topbottom_margin: 1.25rem;
+  --general_side_margin: 0.75rem;
+  --general_button_size: 3.5rem;
+
+  --main_color: #1a1a1a;
+  --secondary_color: #392820;
+  --accent_color_1: #793e10;
+  --accent_color_2: #310d0d;
+
+  --main_text_color: #bbb;
+  --secondary_text_color: #0c0c0c;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #928f8d;
+  /* background-image: url(brick.jpg); */
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  */
+/*  */
+/* GENERAL STYLES */
+.container {
+  margin: 0 var(--general_side_margin);
+  height: 90%;
+  background-color: #2121213f;
+  border-radius: 0.5rem;
+  --button-size: 3.5rem;
+}
+
+.buttons_container {
+  margin: var(--general_topbottom_margin) var(--general_side_margin);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.general_button {
+  width: var(--button-size);
+  height: var(--button-size);
+  border-radius: 0.5rem;
+  background-color: #9d9d9d;
+  color: var(--secondary_text_color);
+}
+
+.general_button:hover {
+  filter: brightness(120%);
+  box-shadow: 0 0 9px var(--accent_color_2);
+  transition: background-color 0.3s;
+}
+
+.general_button:active {
+  box-shadow: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.clicked {
+  background-color: var(--accent_color_2);
+  color: var(--main_text_color);
+  transition: background-color 0.1s;
+}
+
+/*  */
+/*  */
+/* FRETBOARD */
+.fret_container {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 3%;
+}
+
+.chord_name {
+  width: 75%;
+  border: 4px solid var(--main_color);
+  border-radius: 0.75rem;
+  background-color: var(--secondary_color);
+  opacity: 0.9;
+  margin: var(--general_topbottom_margin) var(--general_side_margin);
+  padding: 0.25rem;
+  color: transparent;
+  font-size: 2rem;
+  text-align: center;
+  position: absolute;
+  top: 0;
+}
+
+.case {
+  width: 75%;
+  height: 83%;
+  margin: 0 1rem var(--general_topbottom_margin) -1.25rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.fret_board_container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% auto;
+  grid-template-rows: 10% auto;
+  position: inherit;
+}
+
+.string_labels {
+  color: var(--main_text_color);
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0.75rem;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.string_label {
+  z-index: 10;
+  display: block;
+}
+
+.change_string_input {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  color: var(--main_text_color);
+  width: 1.25rem;
+  height: 1.5rem;
+  outline-style: none;
+  border-color: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.fret_number {
+  justify-self: right;
+  margin: 1.75rem 1.25rem 0 0;
+  color: var(--main_text_color);
+  font-size: 1.75rem;
+}
+
+.fret_chart {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  --line_weight: 0.3rem;
+}
+
+.fret_box {
+  background-color: var(--secondary_color);
+  opacity: 0.9;
+  border-top: var(--line_weight) solid var(--main_color);
+  border-left: var(--line_weight) solid var(--main_color);
+}
+
+.fret_box:nth-child(5n) {
+  border-right: var(--line_weight) solid var(--main_color);
+}
+
+.fret_box:nth-child(n + 21) {
+  border-bottom: var(--line_weight) solid var(--main_color);
+}
+
+/*  */
+/*  */
+/* ACTIVE FRETS */
+.active_container {
+  grid-template-rows: auto;
+}
+
+.active_frets {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  grid-template-rows: 10% repeat(5, auto);
+  gap: 4.5% 8.1%;
+}
+
+.open_fret {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  background-color: transparent;
+  z-index: 0;
+}
+
+.open_fret::before,
+.open_fret::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  top: 60%;
+  left: -37%;
+  background-color: transparent;
+}
+
+.open_fret.muted::before {
+  transform: rotate(45deg);
+  background-color: var(--accent_color_1);
+}
+
+.open_fret.muted::after {
+  transform: rotate(-45deg);
+  background-color: var(--accent_color_1);
+}
+
+.open_fret.open {
+  top: 15%;
+  left: -37%;
+  background-color: transparent;
+  border: 6px solid var(--accent_color_1);
+  border-radius: 50%;
+}
+
+.open_fret.open::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+
+.dot {
+  --dot_size: 35px;
+  transform: translate(-42%, 20%);
+  width: var(--dot_size);
+  height: var(--dot_size);
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+/* .dot:hover {
+  background-color: var(--accent_color_1);
+  opacity: 0.5;
+  transition: background-color 0.2s ease-in-out;
+} */
+
+.dot.active {
+  background-color: var(--accent_color_1);
+  color: var(--main_text_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  */
+/*  */
+/* CONTROLS */
+.controls_container {
+  width: 59%;
+  display: grid;
+  grid-template-rows: 15% 15% 70%;
+  position: absolute;
+  right: 0;
+}
+
+.tonic_container {
+  grid-column: span 2;
+}
+
+.harmony_container {
+  grid-column: span 2;
+}
+
+.harmony_button {
+  width: calc(2.5 * var(--button-size));
+}
+
+.crafting_buttons_container {
+  margin: 0 0 var(--general_topbottom_margin) var(--general_side_margin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.crafting_button {
+  width: calc(2 * var(--button-size));
+}
+
+.text_container {
+  background-color: var(--secondary_color);
+  opacity: 0.9;
+  margin: 0 var(--general_side_margin) var(--general_topbottom_margin)
+    var(--general_side_margin);
+  border: 4px solid var(--main_color);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  background-color: var(--accent_color_2);
+  color: var(--main_text_color);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.text {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+p {
+  color: var(--main_text_color);
+  text-align: left;
+  padding: 1rem;
+}

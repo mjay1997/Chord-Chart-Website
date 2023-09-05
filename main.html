@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container fret_container">
+      <div class="chord_name">Chord Chart</div>
+      <div class="case">
+        <div class="fret_board_container base_container">
+          <div class="blank_div"></div>
+          <div class="string_labels">
+            <div
+              class="string_label"
+              id="string_1_tuning"
+              ondblclick="change_string(id)"
+            >
+              E
+            </div>
+            <div
+              class="string_label"
+              id="string_2_tuning"
+              ondblclick="change_string(id)"
+            >
+              A
+            </div>
+            <div
+              class="string_label"
+              id="string_3_tuning"
+              ondblclick="change_string(id)"
+            >
+              D
+            </div>
+            <div
+              class="string_label"
+              id="string_4_tuning"
+              ondblclick="change_string(id)"
+            >
+              G
+            </div>
+            <div
+              class="string_label"
+              id="string_5_tuning"
+              ondblclick="change_string(id)"
+            >
+              B
+            </div>
+            <div
+              class="string_label"
+              id="string_6_tuning"
+              ondblclick="change_string(id)"
+            >
+              E
+            </div>
+          </div>
+          <div class="fret_number">fr1</div>
+          <div class="fret_chart">
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+            <div class="fret_box"></div>
+          </div>
+        </div>
+        <div class="fret_board_container active_container">
+          <div class="blank_div"></div>
+          <div class="active_frets">
+            <div class="open_fret" id="string_1"></div>
+            <div class="open_fret" id="string_2"></div>
+            <div class="open_fret" id="string_3"></div>
+            <div class="open_fret" id="string_4"></div>
+            <div class="open_fret" id="string_5"></div>
+            <div class="open_fret" id="string_6"></div>
+            <div class="dot" id="string_1">G</div>
+            <div class="dot" id="string_2"></div>
+            <div class="dot" id="string_3"></div>
+            <div class="dot" id="string_4"></div>
+            <div class="dot" id="string_5"></div>
+            <div class="dot" id="string_6"></div>
+            <div class="dot" id="string_1"></div>
+            <div class="dot" id="string_2"></div>
+            <div class="dot" id="string_3"></div>
+            <div class="dot" id="string_4"></div>
+            <div class="dot" id="string_5"></div>
+            <div class="dot" id="string_6"></div>
+            <div class="dot" id="string_1"></div>
+            <div class="dot" id="string_2"></div>
+            <div class="dot" id="string_3"></div>
+            <div class="dot" id="string_4"></div>
+            <div class="dot" id="string_5"></div>
+            <div class="dot" id="string_6"></div>
+            <div class="dot" id="string_1"></div>
+            <div class="dot" id="string_2"></div>
+            <div class="dot" id="string_3"></div>
+            <div class="dot" id="string_4"></div>
+            <div class="dot" id="string_5"></div>
+            <div class="dot" id="string_6"></div>
+            <div class="dot" id="string_1"></div>
+            <div class="dot" id="string_2"></div>
+            <div class="dot" id="string_3"></div>
+            <div class="dot" id="string_4"></div>
+            <div class="dot" id="string_5"></div>
+            <div class="dot" id="string_6"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container controls_container">
+      <div class="buttons_container tonic_container">
+        <button class="general_button tonic_button" id="C" onclick="tonic(id)">
+          C
+        </button>
+        <button class="general_button tonic_button" id="C#" onclick="tonic(id)">
+          C#
+        </button>
+        <button class="general_button tonic_button" id="D" onclick="tonic(id)">
+          D
+        </button>
+        <button class="general_button tonic_button" id="D#" onclick="tonic(id)">
+          D#
+        </button>
+        <button class="general_button tonic_button" id="E" onclick="tonic(id)">
+          E
+        </button>
+        <button class="general_button tonic_button" id="F" onclick="tonic(id)">
+          F
+        </button>
+        <button class="general_button tonic_button" id="F#" onclick="tonic(id)">
+          F#
+        </button>
+        <button class="general_button tonic_button" id="G" onclick="tonic(id)">
+          G
+        </button>
+        <button class="general_button tonic_button" id="G#" onclick="tonic(id)">
+          G#
+        </button>
+        <button class="general_button tonic_button" id="A" onclick="tonic(id)">
+          A
+        </button>
+        <button class="general_button tonic_button" id="A#" onclick="tonic(id)">
+          A#
+        </button>
+        <button class="general_button tonic_button" id="B" onclick="tonic(id)">
+          B
+        </button>
+      </div>
+      <div class="buttons_container harmony_container">
+        <button
+          class="general_button harmony_button"
+          id=" major"
+          onclick="harmony(id)"
+        >
+          Major
+        </button>
+        <button
+          class="general_button harmony_button"
+          id="maj7"
+          onclick="harmony(id)"
+        >
+          Major 7
+        </button>
+        <button
+          class="general_button harmony_button"
+          id="7"
+          onclick="harmony(id)"
+        >
+          b7
+        </button>
+        <button
+          class="general_button harmony_button"
+          id="m"
+          onclick="harmony(id)"
+        >
+          Minor
+        </button>
+        <button
+          class="general_button harmony_button"
+          id="m7"
+          onclick="harmony(id)"
+        >
+          Minor 7
+        </button>
+      </div>
+      <div class="crafting_buttons_container">
+        <button
+          class="general_button crafting_button"
+          id="shuffle"
+          onclick="shuffle()"
+        >
+          Shuffle
+        </button>
+        <button class="general_button crafting_button" id="spice">Spice</button>
+        <button
+          class="general_button crafting_button"
+          id="tuning"
+          onclick="console.log('TUNING')"
+        >
+          Tuning
+        </button>
+        <button
+          class="general_button crafting_button"
+          id="reset"
+          onclick="reset_tuning()"
+        >
+          Reset Tuning
+        </button>
+        <button
+          class="general_button crafting_button"
+          id="reset"
+          onclick="reset_chart('button')"
+        >
+          Reset Chart
+        </button>
+      </div>
+      <div class="text_container">
+        <h1>Chord Info</h1>
+        <div class="text">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+            consequatur eum accusantium atque expedita repellendus quas tempora
+            et. Delectus deserunt adipisci sapiente praesentium explicabo magni
+            sunt asperiores eum officia amet, minus laborum, deleniti reiciendis
+            dignissimos ratione ea voluptas iure sequi sint tempora fugiat.
+            Dolorum blanditiis ratione, voluptas deserunt dolor consequatur quo
+            vero eaque? Reprehenderit, dolor atque adipisci totam aspernatur id
+            deleniti, odit quibusdam quos ab optio aliquid possimus maxime quas
+            necessitatibus sed deserunt hic? Voluptatem aperiam dignissimos
+            labore a quam consectetur possimus voluptates libero, omnis hic
+            nulla amet eligendi non eius molestias quibusdam sed iure porro quis
+            voluptate tempore delectus quia. Rem, est laborum aliquid culpa sit
+            nihil reprehenderit enim non veritatis aperiam mollitia ipsa ex
+            quidem tempore sint suscipit nobis, incidunt, quas dolor sed fugit
+            voluptate? Inventore, eaque veniam omnis hic eos ducimus nostrum!
+            Aspernatur eos id velit tempora asperiores, sint eveniet minus modi
+            consequuntur eum. Vero, distinctio! Rem at accusamus maiores
+            doloremque aut non et nisi, soluta incidunt nihil placeat atque
+            molestiae nobis harum recusandae aliquid autem enim quidem, facere
+            nulla. Illo praesentium fuga dolore distinctio suscipit, beatae quas
+            nulla natus minima molestias sint, deserunt corporis unde qui quod.
+            Eos quaerat inventore debitis beatae? Laudantium voluptatum maxime
+            laboriosam ullam? Ab velit laboriosam, repellat nesciunt illo nemo
+            quae distinctio culpa veritatis minima pariatur, asperiores ipsam
+            inventore eligendi ea accusamus blanditiis temporibus officiis!
+            Itaque esse voluptates voluptate velit nesciunt officiis eveniet
+            iusto, quibusdam deleniti sequi deserunt eaque! Quaerat accusamus
+            eaque repellendus voluptatibus obcaecati error consequuntur
+            aspernatur, repudiandae porro totam ipsa. Magnam at expedita
+            eligendi voluptate, odit accusantium. Qui optio voluptas nam vero
+            iure temporibus consequatur, fugit perspiciatis tempore. Minima
+            atque omnis ut explicabo quod sunt dicta dolores totam. Quaerat qui
+            accusantium aliquid soluta, laboriosam in aliquam a maxime rerum
+            molestias deleniti sit aut doloribus! Aperiam est aut totam officiis
+            repudiandae, et fugit, consequatur architecto provident ut illo?
+            Esse quia deserunt facere quibusdam recusandae laudantium, quae
+            voluptatem at est magnam quod impedit qui dicta placeat odit neque
+            molestiae doloremque. Incidunt id necessitatibus deserunt voluptatum
+            autem nisi inventore. Sit, itaque quibusdam. Non saepe deleniti
+            natus quam illo facere est tenetur omnis quae sunt! Corrupti
+            doloribus, ea animi eum dignissimos fugit odio voluptatem iste
+            obcaecati dolorem harum dicta cumque, earum ducimus sequi magni
+            ipsum eaque. Sapiente omnis iure ducimus voluptatem obcaecati,
+            delectus quidem nobis vero pariatur mollitia dignissimos quae
+            repellendus consectetur fugiat laborum commodi accusantium excepturi
+            quod aspernatur asperiores maiores facere animi dolores incidunt!
+            Odit asperiores voluptate quas delectus magnam perspiciatis placeat,
+            nostrum ex, tempore consequatur natus praesentium ratione ad nam
+            dolores eaque. Nobis, laborum? Similique, omnis cumque. Labore enim
+            nostrum qui quas! Magnam sit ab pariatur consectetur minima eveniet
+            sed omnis. Quis iusto a quaerat ratione minus facere culpa, odio
+            dolor perspiciatis fugiat sunt voluptates deleniti necessitatibus
+            id, ipsam voluptatum consequuntur mollitia dolores molestias, hic
+            odit sed corrupti. Tempore soluta accusantium sit, impedit id earum
+            quia, distinctio iste quisquam eligendi perspiciatis ex itaque
+            tenetur. Officia maxime pariatur earum, qui voluptatibus sint
+            expedita deserunt vel, corporis laudantium ducimus eum, at repellat
+            ratione amet a nobis. Deserunt, placeat explicabo cum vitae libero
+            optio inventore voluptatum eaque blanditiis officia et at quam
+            mollitia, voluptas repudiandae eligendi quaerat! A eaque quae cumque
+            iste quisquam culpa voluptate. Explicabo rerum, dolore itaque
+            eveniet eos nihil aliquid quasi nesciunt natus asperiores, illum,
+            facilis ullam! Voluptatum eligendi exercitationem maiores asperiores
+            earum, consequatur explicabo minima. Laboriosam voluptas distinctio
+            minima corrupti eveniet illum, eligendi dolor ipsa sunt temporibus
+            dignissimos suscipit repellendus voluptatem eius! Nostrum harum
+            exercitationem culpa temporibus amet fuga quia quaerat. Eligendi
+            obcaecati odit inventore maxime? Saepe quisquam doloribus veritatis
+            totam similique eum explicabo nulla voluptatibus magni, optio sed
+            quo corrupti harum inventore impedit architecto dolore tenetur modi
+            reprehenderit velit. Ducimus laboriosam illum, officia sed velit
+            excepturi nisi enim vero voluptate rem quis commodi earum odio
+            sapiente nihil reprehenderit aliquam temporibus tempore non sit
+            quidem maiores ratione corporis. Quidem corporis porro veritatis
+            repellendus aliquam ex, dolor nobis asperiores molestias mollitia
+            debitis odio odit dicta ad iure cumque error sint pariatur quas
+            totam dolores temporibus, amet excepturi molestiae. Dolore incidunt
+            quod, velit molestiae repellendus distinctio id similique cupiditate
+            odit deserunt hic necessitatibus qui sint dolorem dignissimos,
+            inventore tenetur maxime, delectus atque quo voluptatum? Ea laborum
+            amet eum a neque autem vero recusandae, expedita deserunt, saepe,
+            ducimus nam adipisci quos odio aliquam debitis? Unde quis
+            accusantium obcaecati sit laudantium perspiciatis necessitatibus
+            deleniti quo. Minus, repellendus minima? Velit maxime quisquam
+            aliquid harum repellendus distinctio! Sapiente molestiae vel,
+            quibusdam asperiores nesciunt similique soluta maxime doloribus
+            quidem facere. Sunt atque sed dolorum voluptas molestias minima
+            provident voluptatibus? Non voluptatem ratione magni numquam harum
+            reiciendis rem cumque necessitatibus fugiat aliquid saepe, quis
+            nesciunt et impedit culpa optio explicabo, vitae voluptatum beatae
+            blanditiis quas excepturi, eveniet maiores. Quam veritatis ipsum,
+            sit unde minima exercitationem possimus facere incidunt aperiam
+            voluptates quis accusantium a, ipsa maxime non nisi explicabo
+            expedita tempore cupiditate natus! Sed, ipsa tempore quam
+            reprehenderit, impedit perspiciatis adipisci debitis quas voluptatem
+            sequi magni cumque, corporis deserunt non praesentium soluta
+            aspernatur dolore repudiandae alias minima voluptas maiores
+            distinctio unde inventore? Molestiae architecto laboriosam nesciunt
+            hic, velit, ut fugiat est voluptates exercitationem laudantium dolor
+            reiciendis sit quasi explicabo incidunt voluptatibus dolorem autem.
+            Maiores nemo assumenda illum error ut voluptate, facilis sapiente
+            sit, aspernatur iste doloribus possimus doloremque distinctio
+            perferendis cum adipisci sequi facere commodi voluptatum placeat
+            culpa. Illum dignissimos cumque voluptatem ut veritatis nam dolorum
+            eligendi incidunt voluptate quisquam. Magni fugit voluptate incidunt
+            perferendis necessitatibus, libero modi veritatis ab labore illo
+            harum consequuntur. Esse vitae ratione ab hic molestias, unde ullam
+            voluptatem sequi modi cum recusandae, amet provident impedit.
+            Nesciunt atque harum pariatur quidem obcaecati alias, aliquid unde
+            quod possimus quasi officiis laboriosam officia eaque vero, fugiat
+            commodi hic voluptatibus molestias magnam. Similique nisi, sed
+            recusandae tempore, ratione odio, nemo quam illum totam cumque iure
+            deserunt tempora laborum enim ex? Tenetur perferendis ex cumque
+            tempore nesciunt adipisci incidunt ducimus optio praesentium! Iure
+            nostrum totam vero voluptatum eveniet dolorem minima assumenda cum
+            asperiores tempora, voluptatem culpa reprehenderit perspiciatis
+            rerum, incidunt quam, sint enim animi! Omnis quia illum sed?
+            Eveniet, inventore.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
