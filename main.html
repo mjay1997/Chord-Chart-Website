@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="script.js" defer></script>
+    <script src="mt_engine.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -95,7 +96,7 @@
             <div class="open_fret" id="string_4"></div>
             <div class="open_fret" id="string_5"></div>
             <div class="open_fret" id="string_6"></div>
-            <div class="dot" id="string_1">G</div>
+            <div class="dot" id="string_1"></div>
             <div class="dot" id="string_2"></div>
             <div class="dot" id="string_3"></div>
             <div class="dot" id="string_4"></div>
@@ -171,7 +172,7 @@
       <div class="buttons_container harmony_container">
         <button
           class="general_button harmony_button"
-          id=" major"
+          id=" "
           onclick="harmony(id)"
         >
           Major
@@ -213,7 +214,13 @@
         >
           Shuffle
         </button>
-        <button class="general_button crafting_button" id="spice">Spice</button>
+        <button
+          class="general_button crafting_button"
+          id="spice"
+          onclick="spice()"
+        >
+          Spice
+        </button>
         <button
           class="general_button crafting_button"
           id="tuning"

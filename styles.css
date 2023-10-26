@@ -54,6 +54,7 @@ body {
   border-radius: 0.5rem;
   background-color: #9d9d9d;
   color: var(--secondary_text_color);
+  border-color: black;
 }
 
 .general_button:hover {
@@ -222,6 +223,10 @@ body {
   background-color: transparent;
   border: 6px solid var(--accent_color_1);
   border-radius: 50%;
+  color: var(--main_text_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .open_fret.open::before {
